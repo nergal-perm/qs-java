@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="us-en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrient List</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nutrients</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Measurement Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="nutrient : ${nutrients}">
+                <td th:text="${nutrient.name}">Nutrient Name</td>
+                <td th:text="${nutrient.measurementUnit}">Measurement Unit</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
