@@ -1,5 +1,7 @@
 # Configure Local Development Environment with Docker Compose
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Establish a reproducible local development environment using Docker Compose that orchestrates both the Neo4j database and the SpringBoot application. This setup accelerates development and testing cycles.
 
