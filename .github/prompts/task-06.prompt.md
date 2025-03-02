@@ -1,5 +1,7 @@
 # Build Core Thymeleaf Templates for PoC UI
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Develop the primary front-end views and layout using Thymeleaf templates to enable food logging and display daily nutrient summaries. This template setup supports the static nutritional goals and the basic UI for the PoC.
 

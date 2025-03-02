@@ -1,5 +1,7 @@
 # Implement SpringBoot-Neo4j Connectivity and Repository Layer
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Develop the integration layer between the SpringBoot application and Neo4j. This includes configuring connection settings and building repository interfaces that support CRUD operations for ingredients and other entities.
 

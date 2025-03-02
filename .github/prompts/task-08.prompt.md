@@ -1,5 +1,7 @@
 # Set Up Automated Testing Framework for PoC Features
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Build a comprehensive automated testing suite covering unit tests, integration tests, and UI tests to ensure the robustness of the PoC functionalities. This task supports continuous integration and code quality standards.
 

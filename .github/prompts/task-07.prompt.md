@@ -1,5 +1,7 @@
 # Integrate End-to-End Ingredient Logging Flow
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Wire together the front-end, back-end, and database to deliver a complete ingredient logging workflow—from searching for ingredients and entering portion details to calculating nutrients and confirming the log entry.
 

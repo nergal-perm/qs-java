@@ -1,5 +1,7 @@
 # Develop Ingredient CRUD API Endpoints
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Implement RESTful endpoints to enable creating, retrieving, updating, and deleting ingredient records. These endpoints will support the basic ingredient logging flow of the PoC.
 

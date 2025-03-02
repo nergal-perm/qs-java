@@ -1,5 +1,7 @@
 # Develop PoC Technical Documentation and Runbook
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Create comprehensive documentation covering architecture design, API contracts, deployment instructions, and troubleshooting tips to ensure clear knowledge transfer and future maintenance.
 

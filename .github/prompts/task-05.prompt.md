@@ -1,5 +1,7 @@
 # Implement Dynamic HTMX-Enabled Ingredient Search
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Develop a responsive search feature using HTMX to provide live ingredient suggestions, making the user interface more interactive and efficient during ingredient logging.
 
