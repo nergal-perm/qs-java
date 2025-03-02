@@ -2,15 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="us-en">
 <head>
     <meta charset="UTF-8">
-    <title>Nutrient List</title>
+    <title>Food Tracker</title>
     <script src="https://unpkg.com/htmx.org@1.9.5"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        h1 {
+        h1, h2 {
             color: #333;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .section {
+            flex: 1;
+            min-width: 300px;
         }
         table {
             border-collapse: collapse;
@@ -31,22 +40,42 @@
     </style>
 </head>
 <body>
-    <h1>Nutrients</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Measurement Unit</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="nutrient : ${nutrients}">
-                <td th:text="${nutrient.name}">Nutrient Name</td>
-                <td th:text="${nutrient.measurementUnit}">Measurement Unit</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <h1>Food Tracker Neo4j Dashboard</h1>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Nutrients</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Measurement Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="nutrient : ${nutrients}">
+                        <td th:text="${nutrient.name}">Nutrient Name</td>
+                        <td th:text="${nutrient.measurementUnit}">Measurement Unit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Ingredients</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ingredient : ${ingredients}">
+                        <td th:text="${ingredient.name}">Ingredient Name</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

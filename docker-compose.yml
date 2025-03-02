@@ -6,8 +6,10 @@ services:
       - "7687:7687"
     environment:
       - NEO4J_AUTH=neo4j/password
+      - NEO4J_apoc_initializier_neo4j="CALL apoc.cypher.runFile('file:///scripts/init.cypher')"
     volumes:
       - neo4j_data:/data
+      - ./scripts:/scripts
   
   app:
     image: eclipse-temurin:21-jre-alpine
