@@ -1,5 +1,7 @@
 # Implement Nutrient Calculator Service
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Build a dedicated service that computes total nutrient values based on logged ingredient portions. This service will execute dynamic calculations upon form submission to update nutritional totals.
 

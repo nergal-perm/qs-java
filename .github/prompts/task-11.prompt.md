@@ -1,5 +1,7 @@
 # Conduct Initial Performance Benchmarking on Critical Endpoints
 
+Use #file:./generic.prompt.md as a basic prompt, please.
+
 ## Extended Description
 Validate system responsiveness by running performance benchmarks on key endpoints (e.g., dynamic ingredient search and log entry submission) to ensure the PoC meets baseline performance requirements.
 
