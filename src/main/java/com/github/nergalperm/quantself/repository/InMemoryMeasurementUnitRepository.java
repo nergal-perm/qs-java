@@ -1,23 +1,22 @@
 package com.github.nergalperm.quantself.repository;
 
 import com.github.nergalperm.quantself.domain.MeasurementUnit;
-import org.springframework.lang.NonNull;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
+import org.springframework.lang.NonNull;
 
 public class InMemoryMeasurementUnitRepository implements MeasurementUnitRepository {
-    private final Map<Long, MeasurementUnit> storage = new ConcurrentHashMap<>();
-    private final AtomicLong idSequence = new AtomicLong(1);
+    private final Map<UUID, MeasurementUnit> storage = new ConcurrentHashMap<>();
 
     @Override
     @NonNull
-    public <S extends MeasurementUnit> S save(@NonNull S entity) {
+    public MeasurementUnit save(@NonNull MeasurementUnit entity) {
         if (entity.getId() == null) {
-            entity.setId(idSequence.getAndIncrement());
+            entity.setId(new GeneratedValue.UUIDGenerator().generateId("MeasurementUnit", entity));
         }
         storage.put(entity.getId(), entity);
         return entity;

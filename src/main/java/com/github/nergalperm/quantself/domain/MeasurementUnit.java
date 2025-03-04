@@ -1,5 +1,6 @@
 package com.github.nergalperm.quantself.domain;
 
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,8 +18,8 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class MeasurementUnit {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(GeneratedValue.UUIDGenerator.class)
+    private UUID id;
     
     private String name;
     private String symbol;
