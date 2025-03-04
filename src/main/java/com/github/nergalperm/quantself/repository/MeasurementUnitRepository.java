@@ -1,7 +1,14 @@
 package com.github.nergalperm.quantself.repository;
 
 import com.github.nergalperm.quantself.domain.MeasurementUnit;
-import org.springframework.data.neo4j.repository.Neo4jRepository;
+import org.springframework.lang.NonNull;
 
-public interface MeasurementUnitRepository extends Neo4jRepository<MeasurementUnit, Long> {
+import java.util.List;
+
+public interface MeasurementUnitRepository {
+    @NonNull
+    <S extends MeasurementUnit> S save(@NonNull S entity);
+    
+    @NonNull
+    List<MeasurementUnit> findAll();
 }

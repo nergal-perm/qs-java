@@ -3,12 +3,10 @@ package com.github.nergalperm.quantself.infrastructure;
 import com.github.nergalperm.quantself.domain.MeasurementUnit;
 import com.github.nergalperm.quantself.repository.InMemoryMeasurementUnitRepository;
 import com.github.nergalperm.quantself.repository.MeasurementUnitRepository;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
@@ -27,16 +25,12 @@ public class Neo4jAdapter {
 
     public static Neo4jAdapter createNull(List<MeasurementUnit> stubData) {
         Neo4jAdapter wrapper = createNull();
-        wrapper.repository.saveAll(stubData);
+        stubData.forEach(wrapper::saveMeasurementUnit);
         return wrapper;
     }
 
     public List<MeasurementUnit> findAllMeasurementUnits() {
         return repository.findAll();
-    }
-
-    public Optional<MeasurementUnit> findMeasurementUnitById(Long id) {
-        return repository.findById(id);
     }
 
     public MeasurementUnit saveMeasurementUnit(MeasurementUnit unit) {

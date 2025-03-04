@@ -1,12 +1,13 @@
 package com.github.nergalperm.quantself.infrastructure;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.github.nergalperm.quantself.domain.MeasurementUnit;
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class Neo4JAdapterTest {
 
@@ -24,7 +25,7 @@ class Neo4JAdapterTest {
         List<MeasurementUnit> units = wrapper.findAllMeasurementUnits();
         assertFalse(units.isEmpty());
         assertEquals(1, units.size());
-        assertEquals("Gram", units.get(0).getName());
+        assertEquals("Gram", units.getFirst().getName());
     }
 
     @Test
@@ -36,8 +37,8 @@ class Neo4JAdapterTest {
         assertNotNull(saved.getId());
         assertEquals(1L, saved.getId());
         
-        Optional<MeasurementUnit> found = wrapper.findMeasurementUnitById(1L);
-        assertTrue(found.isPresent());
-        assertEquals("Milliliter", found.get().getName());
+        List<MeasurementUnit> found = wrapper.findAllMeasurementUnits();
+        assertFalse(found.isEmpty());
+        assertEquals("Milliliter", found.getFirst().getName());
     }
 }
