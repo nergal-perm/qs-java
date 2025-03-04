@@ -23,7 +23,6 @@ public class MeasurementUnit {
     private String name;
     private String symbol;
     private UnitType type;
-    private Double conversionFactor;
 
     public enum UnitType {
         WEIGHT,
@@ -32,10 +31,9 @@ public class MeasurementUnit {
         OTHER
     }
 
-    public MeasurementUnit(String name, String symbol, UnitType type, Double conversionFactor) {
+    public MeasurementUnit(String name, String symbol, UnitType type) {
         this.name = name;
         this.symbol = symbol;
         this.type = type;
-        this.conversionFactor = conversionFactor;
     }
 }

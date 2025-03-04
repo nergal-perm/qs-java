@@ -49,7 +49,7 @@ This will execute all classes with names ending in `Test.java` but exclude those
 Run integration tests using the Maven Failsafe plugin:
 
 ```bash
-./mvnw verify
+./mvnw failsafe:integration-test
 ```
 
 This will execute all classes with names ending in `IT.java` or `IntegrationTest.java`.
